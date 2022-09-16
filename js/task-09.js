@@ -17,8 +17,10 @@ function onChangeColor() {
   const textArea = refs.textArea;
 
   // инлайн стиль - елем.style
-  const bodyBgColor = (refs.body.style.backgroundColor = getRandomHexColor());
+  const bodyBgColor = getRandomHexColor();
   console.log("onChangeColor ~ bodyBgColor", bodyBgColor);
+
+  refs.body.style.backgroundColor = bodyBgColor;
   textArea.textContent = bodyBgColor;
 }
 

@@ -4,31 +4,26 @@ const refs = {
 };
 
 // создаем переменную с требуемой длинной строки
-const elLengthrequire = refs.input.dataset.length;
+const elLengthrequire = Number(refs.input.dataset.length);
 console.log("elLengthrequire", elLengthrequire);
 
-refs.input.addEventListener("input", (event) => {
-  console.log(event.currentTarget.value.length);
-  console.log(event.currentTarget.value.length == elLengthrequire);
-});
+// refs.input.addEventListener("input", (event) => {
+//   console.log(event.currentTarget.value.length);
+//   console.log(event.currentTarget.value.length === elLengthrequire);
+// });
 
 // создать событие блёр
 refs.input.addEventListener("blur", (event) => {
   // если инпут.ленс !== дата-ленс, то добавдяем соответствуюющий класс
 
-  if (event.currentTarget.value.length != elLengthrequire) {
+  if (event.currentTarget.value.length !== elLengthrequire) {
     event.currentTarget.classList.add("invalid");
-    if (event.currentTarget.classList.contains("valid")) {
-      event.currentTarget.classList.remove("valid");
-    }
+    event.currentTarget.classList.remove("valid");
   }
-
   //   в противном случае добавляем соотвтетсвующий класс
-  if (event.currentTarget.value.length == elLengthrequire) {
+  else {
     event.currentTarget.classList.add("valid");
-    if (event.currentTarget.classList.contains("invalid")) {
-      event.currentTarget.classList.remove("invalid");
-    }
+    event.currentTarget.classList.remove("invalid");
   }
 });
 

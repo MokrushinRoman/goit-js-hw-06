@@ -14,6 +14,7 @@ const refs = {
 refs.createBtn.addEventListener("click", (e) => {
   // создаю пустой массив для хранения результатов цыкла
   let boxesArray = [];
+
   // console.log("refs.createBtn.addEventListener ~ boxesArray", boxesArray);
 
   // создаю переменные, которые будут хранить значение инпута и максимально допустимое значение
@@ -32,6 +33,7 @@ refs.createBtn.addEventListener("click", (e) => {
     boxesArray.push(box);
   }
 
+  // refs.boxesContainer.append(...boxesArray);
   refs.boxesContainer.innerHTML = boxesArray.join("");
 });
 

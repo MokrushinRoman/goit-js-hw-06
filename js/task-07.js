@@ -9,7 +9,7 @@ const refs = {
 // console.log((actionResult.style.fontSize = `${maxValue}px`));
 
 // создаем событие change
-refs.inputControler.addEventListener("change", (event) => {
+refs.inputControler.addEventListener("input", (event) => {
   const actionValue = event.currentTarget.value;
   // добавляем спану стиль фонт-сайз в пикселях со значением, которое будет передаваться из ползунка
   refs.controlerExample.style.fontSize = `${actionValue}px`;

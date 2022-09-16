@@ -10,7 +10,26 @@ function onSubmitForm(event) {
   // создать event preventDefault
   event.preventDefault();
 
-  const currentTarget = event.currentTarget;
+  const formElements = event.currentTarget.elements;
+
+  const mail = formElements.email;
+  const password = formElements.password;
+
+  if (mail.value === "" || password.value === "") {
+    alert("Заполните пожалуйста все пункты");
+    return;
+  }
+
+  const formData = {
+    mail: mail.value,
+    password: password.value,
+  };
+
+  console.log("onSubmitForm ~ formData", formData);
+  event.currentTarget.reset();
+
+  /* 
+ const currentTarget = event.currentTarget;
 
   // создать переменную с экземпляром класса формдата
   const formData = new FormData(currentTarget);
@@ -20,12 +39,14 @@ function onSubmitForm(event) {
 
     // если есть пустое поле то вывести алерт с предупреждением
     if (value === "") {
-      alert(`Ну и? Почему не запонил ${name}?`);
+      alert(`Ну и? Почему не заполнил ${name}?`);
+      return;
     }
 
     console.log({ name, value });
-    currentTarget.reset();
-  });
+    curre
+  }); 
+  */
 }
 
 // Обработка отправки формы form.login-form должна быть по событию submit.
